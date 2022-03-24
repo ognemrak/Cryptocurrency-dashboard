@@ -1,3 +1,8 @@
-.control-bar {
-    padding: 0 0 0 100px;
+:host {
+    display: block;
+    padding: 0 0 0 7.143em;
+}
+
+.mat-form-field-infix {
+    margin-right: 3.57em;
 }
