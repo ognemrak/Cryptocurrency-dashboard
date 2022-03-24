@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { CurrencyDetailsComponent } from './components/currency-details/currency
 import { HomeComponent } from './components/home/home.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AutocompleteComponent } from './shared-components/autocomplete/autocomplete.component';
+import { SelectComponent } from './shared-components/select/select.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +26,19 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     PromoComponent,
     CurrencyDetailsComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    AutocompleteComponent,
+    SelectComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

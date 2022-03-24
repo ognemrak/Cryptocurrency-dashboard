@@ -4,4 +4,19 @@
     left: 0;
     bottom: 0;
     width: 100px;
+    padding: 40px 0;
+    box-shadow: inset -1.5px 0px 0px rgba(255, 255, 255, 0.15);
+}
+
+.navigation a,
+.exit-link {
+    display: block;
+    padding: 15px;
+    border-radius: 1em;
+    transition: background-color .3s;;
+}
+
+.navigation a:hover,
+.exit-link:hover {
+    background-color: #372C44;
 }

@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    padding: 0 0 0 100px;
+}
+
+.dashboard-container {
+    padding: 0 20px;
+}
+
+.dashboard-container .column {
+    padding: 0 10px;
+}
