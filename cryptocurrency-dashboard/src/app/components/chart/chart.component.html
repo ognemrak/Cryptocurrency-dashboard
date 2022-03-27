@@ -7,3 +7,9 @@
    [options]="chartOptions"
 >
 </canvas>
+
+<div *ngFor="let test of data">
+   <strong>{{ test.id }}</strong>
+   <strong> price is </strong>
+   <strong>{{ test.price }}</strong>
+</div>

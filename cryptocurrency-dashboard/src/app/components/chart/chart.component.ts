@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
 
 import { CryptocurrencyDataService } from 'src/app/services/cryptocurrency-data.service';
@@ -9,6 +9,7 @@ import { CryptocurrencyDataService } from 'src/app/services/cryptocurrency-data.
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent {
+  @Input() data: any;
   chartOptions: ChartOptions = {
     responsive: true,
     plugins: {
