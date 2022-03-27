@@ -20,9 +20,6 @@ import { PromoComponent } from './components/promo/promo.component';
 import { SelectComponent } from './shared-components/select/select.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
-import { NguCarouselModule } from '@ngu/carousel';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +42,7 @@ import { NguCarouselModule } from '@ngu/carousel';
     MatSelectModule,
     ReactiveFormsModule,
     NgChartsModule,
-    HttpClientModule,
-    NguCarouselModule
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
