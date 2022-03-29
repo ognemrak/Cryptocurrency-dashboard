@@ -10,6 +10,7 @@ export class DashboardComponent {
   public data: any;
   
   constructor(private service: CryptocurrencyDataService) {
-    this.service.getCryptoTimeTicker('XRP,BTC,ETH', '1d,30d').subscribe(data => this.data = data);
+    this.service.getCryptoTimeTicker('XRP,BTC,ETH','1h,1d').subscribe(data => this.data = data);
+    // this.service.getCryptoTimeTicker('XRP,BTC,ETH', '1d,30d').subscribe(data => this.data = data);
   }
 }
