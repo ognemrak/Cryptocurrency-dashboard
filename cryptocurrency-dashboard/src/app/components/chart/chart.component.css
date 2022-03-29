@@ -2,3 +2,14 @@ canvas {
     width: 600px;
     height: 300px;
 }
+
+.decor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 3px;
+}
