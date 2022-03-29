@@ -20,6 +20,8 @@ import { PromoComponent } from './components/promo/promo.component';
 import { SelectComponent } from './shared-components/select/select.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+import {CarouselModule} from 'primeng/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MatSelectModule,
     ReactiveFormsModule,
     NgChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

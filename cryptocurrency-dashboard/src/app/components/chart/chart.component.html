@@ -1,6 +1,6 @@
 <!-- <app-select></app-select> -->
 
-<div *ngIf="isDataLoaded">
+<div *ngIf="data && isLoaded">
    <canvas
       baseChart
       [data]="testDataset"
@@ -9,11 +9,11 @@
    </canvas>
 </div>
 
-<div *ngFor="let test of data">
+<!-- <div *ngFor="let test of data">
    <strong>{{ test.id }}</strong>
    <strong> price is </strong>
    <strong>{{ test.price }}</strong>
    <span class="decor">
       <img src="{{ test.logo_url }}" alt="Crypto icon">
    </span>
-</div>
+</div> -->
