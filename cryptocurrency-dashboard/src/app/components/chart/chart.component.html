@@ -1,19 +1,12 @@
-<!-- <app-select></app-select> -->
+<div class="card">
+   <!-- <app-select></app-select> -->
 
-<div *ngIf="data && isLoaded">
-   <canvas
-      baseChart
-      [data]="testDataset"
-      [type]="'line'"
-      [options]="chartOptions">
-   </canvas>
+   <div *ngIf="data && isLoaded">
+      <canvas
+         baseChart
+         [data]="testDataset"
+         [type]="'line'"
+         [options]="chartOptions">
+      </canvas>
+   </div>
 </div>
-
-<!-- <div *ngFor="let test of data">
-   <strong>{{ test.id }}</strong>
-   <strong> price is </strong>
-   <strong>{{ test.price }}</strong>
-   <span class="decor">
-      <img src="{{ test.logo_url }}" alt="Crypto icon">
-   </span>
-</div> -->
