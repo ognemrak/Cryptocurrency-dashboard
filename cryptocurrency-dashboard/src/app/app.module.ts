@@ -21,6 +21,10 @@ import { SelectComponent } from './shared-components/select/select.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 import {CarouselModule} from 'primeng/carousel';
+import { TrendsComponent } from './components/trends/trends.component';
+import { TransferComponent } from './components/transfer/transfer.component';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import {CarouselModule} from 'primeng/carousel';
     DashboardComponent,
     AutocompleteComponent,
     SelectComponent,
-    ChartComponent
+    ChartComponent,
+    TrendsComponent,
+    TransferComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import {CarouselModule} from 'primeng/carousel';
     ReactiveFormsModule,
     NgChartsModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

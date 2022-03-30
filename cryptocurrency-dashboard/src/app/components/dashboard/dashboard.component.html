@@ -9,21 +9,55 @@
     </div>
 </div>
 
-<div class="content-section implementation carousel-demo">
-    <div class="card">
-        <p-carousel [value]="images" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1"
-        [circular]="true" [autoplayInterval]="0" [responsiveOptions]="responsiveOptions">
-            <ng-template let-image pTemplate="item">
-              <div class="item card">
-                <img src="{{image.picture}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{image.random}}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </ng-template>
-        </p-carousel>
+<p-carousel [value]="data"
+            [numVisible]="4"
+            [numScroll]="1"
+            [circular]="true">
+      <ng-template let-data pTemplate="item">
+        <div class="card">
+          <div class="decor">
+            <img src="{{ data.logo_url }}" alt="Currency icon">
+          </div>
+          
+          <div class="d-flex flex-center-between">
+            <div class="conversion">
+              <strong>{{ data.id }}</strong>
+              <img src="assets/images/icons/conversion.svg" alt="Conversion icon">
+              <strong>USD</strong>
+            </div>
+  
+            <div class="price-change negative" *ngIf="data['30d'].volume_change_pct < 0">
+              <span class="change-icon">
+                <img src="assets/images/icons/Percent-neg.svg" alt="Percent icon">
+              </span>
+              <span>{{ data['30d'].volume_change_pct }}</span>
+            </div>
+
+            <div class="price-change" *ngIf="data['30d'].volume_change_pct > 0">
+              <span class="change-icon">
+                <img src="assets/images/icons/Percent-pos.svg" alt="Percent icon">
+              </span>
+              <span>{{ data['30d'].volume_change_pct }}</span>
+            </div>
+          </div>
+
+          <strong class="currency-price">{{ data.price }}</strong>
+        </div>
+      </ng-template>
+</p-carousel>
+
+<div class="dashboard-container d-flex">
+  <div class="column">
+    <div *ngIf="data">
+      <app-chart [data]="data"></app-chart>
     </div>
   </div>
+  <div class="column">
+    <app-transfer></app-transfer>
+  </div>
+  <div class="column">
+    <app-trends [data]="data"></app-trends>
+  </div>
+</div>
+
 

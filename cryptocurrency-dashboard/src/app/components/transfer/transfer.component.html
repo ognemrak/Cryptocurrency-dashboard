@@ -1,0 +1,18 @@
+<div class="card">
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">
+            <img src="assets/images/icons/Avatar.svg" alt="Avatar icon">
+        </mat-radio-button>
+        <mat-radio-button value="2">
+            <img src="assets/images/icons/Avatar2.svg" alt="Avatar icon">
+        </mat-radio-button>
+    </mat-radio-group>
+    <label for="name">Name: </label>
+    <input id="name" type="text" [formControl]="name">
+    <strong>Current input value is: {{ name.value }}</strong>
+    <button type="button" (submit)="approveSubmit()">
+        <img src="assets/images/icons/Send.svg" alt="Send icon">
+        Transfer Now
+    </button>
+</div>
+
