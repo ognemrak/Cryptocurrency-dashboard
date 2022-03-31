@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./transfer.component.css']
 })
 export class TransferComponent implements OnInit {
+  transferUser!: string;
   name = new FormControl('');
   constructor() { }
 
@@ -14,6 +15,6 @@ export class TransferComponent implements OnInit {
   }
 
   public approveSubmit(): void {
-    
+    window.alert('You will transfer sum of ' + this.name.value + ' to ' + this.transferUser);
   }
 }

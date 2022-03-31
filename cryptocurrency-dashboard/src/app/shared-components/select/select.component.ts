@@ -1,4 +1,4 @@
-import { Component}  from '@angular/core';
+import { Component, Input }  from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,8 @@ import { FormControl } from '@angular/forms';
 export class SelectComponent {
   public toppings = new FormControl();
   public toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  @Input() options: string[] | undefined;
+
 
   constructor() { }
 }

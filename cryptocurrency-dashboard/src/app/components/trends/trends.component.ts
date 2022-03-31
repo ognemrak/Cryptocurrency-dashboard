@@ -10,8 +10,6 @@ export class TrendsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+  ngOnInit(): void { }
 
 }

@@ -26,6 +26,8 @@ export class ChartComponent {
     },
   };
 
+  public options: string[] = [];
+
   // salesData: ChartData<'line'> = {
   //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
   //   datasets: [
@@ -38,6 +40,7 @@ export class ChartComponent {
   public isLoaded = false;
   constructor(private dataService: CryptocurrencyDataService) {
     this.setData();
+    this.getCurrencies();
   }
 
   private setData() {
@@ -52,6 +55,14 @@ export class ChartComponent {
         this.testDataset.datasets.push(reqs);
       });
       this.isLoaded = true;
+    }, 500)
+  }
+
+  public getCurrencies() {
+    setTimeout(() => {
+      this.data.forEach((item: any) => {
+        this.options.push(item.id);
+      });
     }, 500)
   }
 }

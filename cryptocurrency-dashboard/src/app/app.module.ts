@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import {CarouselModule} from 'primeng/carousel';
 import { TrendsComponent } from './components/trends/trends.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { MatRadioModule } from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MatRadioModule } from '@angular/material/radio';
     NgChartsModule,
     HttpClientModule,
     CarouselModule,
-    MatRadioModule
+    MatRadioModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
