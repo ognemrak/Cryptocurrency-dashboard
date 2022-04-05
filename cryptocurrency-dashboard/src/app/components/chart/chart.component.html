@@ -1,5 +1,7 @@
 <div class="card">
-   <app-select [options]="options"></app-select>
+   <!-- <app-select class="currency-select"
+               [options]="options"
+               (newItemEvent)="addItem($event)"></app-select> -->
 
    <div *ngIf="data && isLoaded">
       <canvas

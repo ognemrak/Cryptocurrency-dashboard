@@ -15,7 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule, ThemeService } from 'ng2-charts';
 import { PromoComponent } from './components/promo/promo.component';
 import { SelectComponent } from './shared-components/select/select.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';

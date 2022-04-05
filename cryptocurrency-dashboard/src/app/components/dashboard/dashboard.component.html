@@ -3,8 +3,8 @@
         <app-promo></app-promo>
     </div>
     <div class="column">
-        <div *ngIf="data">
-            <app-chart [data]="data"></app-chart>
+        <div *ngIf="currencies$ | async">
+            <app-chart [data]="currencies$ | async"></app-chart>
         </div>
     </div>
 </div>
@@ -49,14 +49,14 @@
 <div class="dashboard-container d-flex">
   <div class="column">
     <div *ngIf="data">
-      <app-chart [data]="data"></app-chart>
+      <app-chart [data]="currencies$ | async"></app-chart>
     </div>
   </div>
   <div class="column">
     <app-transfer></app-transfer>
   </div>
   <div class="column">
-    <app-trends [data]="data"></app-trends>
+    <app-trends [data]="currencies$ | async"></app-trends>
   </div>
 </div>
 

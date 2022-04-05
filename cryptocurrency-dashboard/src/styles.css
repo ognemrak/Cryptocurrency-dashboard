@@ -47,3 +47,25 @@ ul {
 .p-carousel-items-container {
     padding: 30px 0 0;
 }
+
+/* Form components styles */
+
+.mat-form-field-infix {
+    width: auto !important;
+    margin-right: 3.57em;
+}
+
+.mat-autocomplete-trigger {
+    min-width: 220px;
+    padding: 15px 20px;
+    background: #2F293E;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.currency-select .mat-form-field {
+    width: 200px;
+    background-color: rgba(26, 17, 29, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+}

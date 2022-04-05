@@ -1,5 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams  } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
+
+interface Currency {
+  circulating_supply: string
+  currency: string
+  first_candle: string
+  first_order_book: string
+  first_trade: string
+  high: string
+  high_timestamp: string
+  id: string
+  logo_url: string
+  market_cap: string
+  market_cap_dominance: string
+  max_supply: string
+  name: string
+  num_exchanges: string
+  num_pairs: string
+  num_pairs_unmapped: string
+  price: string
+  price_date: string
+  price_timestamp: string
+  rank: string
+  status: string
+  symbol: string
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +68,20 @@ export class CryptocurrencyDataService {
     this.http.get(this.cryptoApiUrl, {params: params}).subscribe(data => console.log(data));
 
     return this.http.get(this.cryptoApiUrl, {params: params});
+  }
+
+  public getCTT(ids: string, interval: string) : Observable<Currency[]> {
+    const params = new HttpParams({
+      fromObject: {
+        ids: ids,
+        interval: interval
+      }
+    });
+
+    return this.http.get(this.cryptoApiUrl, {params: params}).pipe(
+      map((data: any) => {
+        return data;
+      })
+    );
   }
 }
