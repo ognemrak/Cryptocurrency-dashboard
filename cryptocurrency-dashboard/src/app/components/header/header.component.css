@@ -3,6 +3,40 @@
     padding: 0 0 0 7.143em;
 }
 
-.mat-form-field-infix {
-    margin-right: 3.57em;
+.header {
+    padding: 0 30px;
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2F293E;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+}
+
+.btn-link:hover {
+    background-color: #3F3655;
+}
+
+.btn-link.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-link .alert {
+    position: absolute;
+    top: 8%;
+    right: 7%;
+    background-color: #E9001C;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.page-name {
+    font-size: 14px;
+    margin: 0;
 }

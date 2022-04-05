@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
 
-import { CryptocurrencyDataService } from 'src/app/services/cryptocurrency-data.service';
-
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -12,7 +10,7 @@ export class ChartComponent {
   @Input() data: any;
   
   testDataset: ChartData<'line'> = {
-    labels: [],
+    labels: ['1', '2', '3'],
     datasets: []
   };
 
@@ -26,6 +24,10 @@ export class ChartComponent {
     },
   };
 
+  public options: string[] = [];
+
+  public selectedOption: string = ''
+
   // salesData: ChartData<'line'> = {
   //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
   //   datasets: [
@@ -36,7 +38,8 @@ export class ChartComponent {
   //   ],
   // };
   public isLoaded = false;
-  constructor(private dataService: CryptocurrencyDataService) {
+  constructor() {
+    this.getCurrencies();
     this.setData();
   }
 
@@ -53,5 +56,17 @@ export class ChartComponent {
       });
       this.isLoaded = true;
     }, 500)
+  }
+
+  public getCurrencies() {
+    setTimeout(() => {
+      this.data.forEach((item: any) => {
+        this.options.push(item.id);
+      });
+    }, 500)
+  }
+
+  addItem(newItem: string) {
+    console.log(newItem);
   }
 }
