@@ -32,22 +32,9 @@ interface Currency {
   providedIn: 'root'
 })
 export class CryptocurrencyDataService {
-  // private cryptocurrencyUrl = 'http://api.coinlayer.com/api/live?access_key=219524f0728b4604b832bcac1630fbe5';
   private cryptoApiUrl = 'https://api.nomics.com/v1/currencies/ticker?key=ba133ae297130afd15b4dbe22bdb2613b1255755';
 
   constructor(private http: HttpClient) { }
-
-  // public getCryptoTimeFrameData(startDate: string, endDate: string, symbols: string) {
-  //   const params = new HttpParams({
-  //     fromObject: {
-  //       startDate: startDate,
-  //       endDate: endDate,
-  //       symbols: symbols
-  //     }
-  //   });
-
-  //   return this.http.get(this.cryptocurrencyUrl, {params: params});
-  // }
 
 // @param ids: string
 // Example: ids=BTC,ETH,XRP
