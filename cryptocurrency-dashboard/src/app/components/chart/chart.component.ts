@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ChartData, ChartOptions } from 'chart.js';
+import { Chart, ChartData, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-chart',
@@ -10,7 +10,7 @@ export class ChartComponent {
   @Input() data: any;
   
   testDataset: ChartData<'line'> = {
-    labels: ['1', '2', '3'],
+    labels: [],
     datasets: []
   };
 
@@ -38,6 +38,25 @@ export class ChartComponent {
   //   ],
   // };
   public isLoaded = false;
+
+
+  ctx = document.getElementById('myChart') as HTMLCanvasElement;
+
+  myChart = new Chart(this.ctx, {
+      type: 'line',
+      data: {
+        labels: [] as string[],
+        datasets: []
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
   constructor() {
     this.getCurrencies();
     this.setData();
@@ -51,10 +70,14 @@ export class ChartComponent {
           data: [item.price, item['1h'].price_change, item['30d'].price_change],
           tension: 0.5
         };
+        this.myChart.data.labels?.push(item.id);
+        this.myChart.data.datasets.push(reqs);
         this.testDataset.labels?.push(item.id);
         this.testDataset.datasets.push(reqs);
+        // this.myChart.update();
       });
       this.isLoaded = true;
+      this.myChart.update();
     }, 500)
   }
 
