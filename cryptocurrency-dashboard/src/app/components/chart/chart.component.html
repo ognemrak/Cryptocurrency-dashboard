@@ -1,16 +1,20 @@
 <div class="card">
-   <!-- <app-select class="currency-select"
+   <app-select class="currency-select"
                [options]="options"
-               (newItemEvent)="addItem($event)"></app-select> -->
+               (newItemEvent)="addItem($event)"></app-select>
 
-   <div *ngIf="data && isLoaded">
+   <!-- <div *ngIf="data && isLoaded">
       <canvas
          baseChart
          [data]="testDataset"
          [type]="'line'"
          [options]="chartOptions">
       </canvas>
-   </div>
-</div>
 
-<canvas id="myChart" width="400" height="400"></canvas>
+   </div> -->
+
+</div>
+<canvas #canvas id="myChart"></canvas>
+
+
+
