@@ -26,37 +26,12 @@ export class ChartComponent implements AfterViewInit {
   };
 
   public options: string[] = [];
-
-  public selectedOption: string = ''
-
-  // salesData: ChartData<'line'> = {
-  //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-  //   datasets: [
-  //     { label: 'Mobiles', data: [1000, 1200, 1050, 2000, 500], tension: 0.5 },
-  //     { label: 'Laptop', data: [200, 100, 400, 50, 90], tension: 0.5 },
-  //     { label: 'AC', data: [500, 400, 350, 450, 650], tension: 0.5 },
-  //     { label: 'Headset', data: [1200, 1500, 1020, 1600, 900], tension: 0.5 },
-  //   ],
-  // };
+  
   public isLoaded = false;
 
-
-  // ctx = document.getElementById('myChart').getContext('2d');
   myChart!: Chart;
-  // myChart = new Chart(this.canvas.nativeElement.getContext('2d'), {
-  //     type: 'line',
-  //     data: {
-  //       labels: ['1', '2', '3'] as string[],
-  //       datasets: []
-  //     },
-  //     options: {
-  //         scales: {
-  //             x: {
-  //                 beginAtZero: true
-  //             }
-  //         }
-  //     }
-  // });
+
+  selectedvalue!: string;
 
   constructor() {}
   ngAfterViewInit(): void {
@@ -67,13 +42,19 @@ export class ChartComponent implements AfterViewInit {
         datasets: []
       },
       options: {
-          scales: {
-              x: {
-                  beginAtZero: true
-              }
+        plugins: {
+          legend: {
+            display: false
           }
+        },
+        scales: {
+            x: {
+                beginAtZero: true
+            }
+        }
       }
   });
+
     this.getCurrencies();
     this.setData();
     
@@ -106,38 +87,26 @@ export class ChartComponent implements AfterViewInit {
     }, 500)
   }
 
-  addItem(newItem: string) {
-    this.myChart.data.datasets.map(value => {
-      // console.log(1, value.label);
-      // console.log(2, newItem);
-      if (value.label === newItem) {
-        // console.log(value, 'value is');
-        this.myChart.data.datasets = [];
-        // this.myChart.data.datasets[0].label = value.label;
-        this.myChart.data.datasets.push(value);
-        console.log(this.myChart.data.datasets, 'datasets are');
-        this.myChart.update();
-      }
-    })
-
-    // setTimeout(() => {
-    //   console.log(this.myChart.data.datasets);
-    // }, 1000)
+  addItem(selectedValue: string) {
+    console.log(selectedValue, ' is selectedValue');
+    this.toggle(selectedValue);
   }
 
-  // removeOther() {
-  //   this.myChart.data = {
-  //   labels: ['1', '2', '3', '4'],
-  //   datasets: [
-  //     { label: 'Mobiles', data: [1000, 1200, 1050, 2000, 500] },
-  //     { label: 'Laptop', data: [200, 100, 400, 50, 90] },
-  //     { label: 'AC', data: [500, 400, 350, 450, 650] },
-  //     { label: 'Headset', data: [1200, 1500, 1020, 1600, 900] },
-  //   ],
-  // };
-  // //     this.myChart.update();
-  //     console.log(this.myChart, 'MyChart');
-  //     // console.log(this.ctx, 'ctx');
-  //     console.log(this.myChart.update());
-  // }
+  toggle(value: string) {
+    const chart = this.myChart;
+    // console.log('this.selectedvalue', this.selectedvalue);
+    chart.data.datasets.forEach(dataset => {
+      dataset.hidden = false;
+      // console.log('dataset.label', dataset.label);
+      if(dataset.label !== value) {
+        dataset.hidden = true;
+      }
+    })
+    chart.update()
+  }
 }
+
+
+
+
+
